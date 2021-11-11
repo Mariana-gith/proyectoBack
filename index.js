@@ -3,10 +3,10 @@ const express = require('express')
 const app = express()
 const reouters = require("./routes/index")
 const http = require('http')
+const port = process.env.PORT || 3001
 const server = http.createServer(app)
 const io = require('socket.io')(server) 
 
-const port = process.env.PORT || 3001
 
 
 let msj= [] 
@@ -44,5 +44,5 @@ app.use("/api", reouters)
 
 
 server.listen(port,()=>{
-    console.log('server ok!!',port)
+    console.log('server ok!!'+ port)
 })
