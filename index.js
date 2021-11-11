@@ -6,7 +6,7 @@ const http = require('http')
 const server = http.createServer(app)
 const io = require('socket.io')(server) 
 
-const port = 3001
+const port = process.env.PORT || 3001
 
 
 let msj= [] 
