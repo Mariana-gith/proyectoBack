@@ -31,7 +31,8 @@ io.on("connection",(socket)=>{
         console.log(data)
         msj.push(data)
         console.log(msj)
-        socket.emit("menssenge_client", msj)
+       // socket.emit("menssenge_client", msj)
+       io.sockets.emit("menssenge_client",msj)
     })
 
 });

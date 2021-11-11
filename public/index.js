@@ -8,7 +8,7 @@ socket.on("menssenge_client",(data)=>{
 
 const render = (d) =>{
     let html = d.map((da)=>{
-        return `<p> ${ da.usuario} :  ${ da.mensaje}  </p>`
+        return `<p> <strong> ${ da.usuario} </strong> :  ${ da.mensaje}</p>`
     }).join(" ")
 
     document.querySelector("#caja").innerHTML = html
@@ -23,6 +23,7 @@ const addMessage = () =>{
     console.log(objMsj)
     socket.emit("msn__client", objMsj)
     mensaje: document.getElementById('msn').value= " "
-    usuario: document.getElementById('user').value= " "
+    usuario: document.getElementById('user').value
+
     return false
 }
